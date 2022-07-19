@@ -27,7 +27,7 @@
 # define WIDTH		800.0
 # define HEIGHT		600.0
 
-# define INTER_MAX	4200
+# define INTER_MAX	42000
 # define THREAD		4
 # define IND		0.5 / HEIGHT
 # define Y_WOW		HEIGHT / 2.0 * IND
@@ -59,27 +59,27 @@
 # define MARS		"./img_png/mars.png"
 # define JUPITER	"./img_png/jupiter.png"
 
-# define EXIT		53
-# define EXPOSE		36
-# define ZERO		37
-# define UN			13
-# define DEUX		1
-# define TROIS		0
-# define QUATRE		2
-# define CINQ		12
-# define SIX		14
-# define SEPT		123
-# define HUIT		124
-# define NEUF		125
-# define DIX		126
-# define ONZE		82
-# define DOUZE		49
-# define FAUCON		257
-# define ANTIA		24
-# define CARTOON	8
-# define CARTOON_P	69
-# define CARTOON_M	78
-# define MOTION_B	46
+# define EXIT		65307  // esc 
+# define EXPOSE		65293  // enter/return
+# define ZERO		108    // L : moving cam on/off
+# define UN		119    // W : rot ↓  
+# define DEUX		115    // S : rot ↑
+# define TROIS		97     // A : rot ←
+# define QUATRE		100    // D : rot → 
+# define CINQ		113    // Q : barrel ←
+# define SIX		101    // E : barrel → 
+# define SEPT		65361  // ← : left
+# define HUIT		65363  // → : right
+# define NEUF		65364  // ↓ : back
+# define DIX		65362  // ↑ : forward
+# define ONZE		65363  // 0 : down
+# define DOUZE		32     // space : up
+# define FAUCON		65505  // shift : speed
+# define ANTIA		61     // +_midkeybord
+# define CARTOON	99     // C
+# define CARTOON_P	65451  // +_numpad
+# define CARTOON_M	65453  // -_numpad
+# define MOTION_B 	109    // M
 
 typedef struct		s_base
 {

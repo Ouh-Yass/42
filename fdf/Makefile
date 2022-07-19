@@ -19,7 +19,7 @@ SRC = src/parsing.c\
 
 OBJ = $(SRC:.c=.o)
 INCLUDES = includes/
-LIB = -L libft/ -lft -lmlx -framework OpenGL -framework AppKit
+LIB = -L libft/ -lft -L ./ -lmlx -L /usr/lib/x86_64-linux-gnu/ -lX11 -lXext -lm
 
 all: $(NAME)
 

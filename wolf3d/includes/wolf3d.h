@@ -20,11 +20,11 @@
 # define DIST_MAX 6400
 
 # define PAS 20
-# define AVANCER 126
-# define RECULER 125
-# define ROT_D 124
-# define ROT_G 123
-# define EXIT 53
+# define AVANCER 65362
+# define RECULER 65364
+# define ROT_D 65363
+# define ROT_G 65361
+# define EXIT 65307
 
 typedef struct		s_cam
 {

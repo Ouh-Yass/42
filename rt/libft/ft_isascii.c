@@ -14,12 +14,9 @@
 
 int	ft_isascii(int c)
 {
-	unsigned char	d;
-
-	d = (unsigned char)c;
 	if (c < 0 || c > 255)
 		return (0);
-	else if (d >= 0 && d <= 127)
+	else if (c >= 0 && c <= 127)
 		return (1);
 	else
 		return (0);

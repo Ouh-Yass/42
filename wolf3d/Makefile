@@ -23,9 +23,9 @@ SRC = srcs/main.c\
 	srcs/map.c\
 
 OBJ = $(SRC:.c=.o)
-INCLUDES = includes/ -I /usr/X11/include
+INCLUDES = includes/
 #LIB = -L libft/ -lft -L ./usr/lib/ -lmlx -lft -L /usr/X11/lib -lX11 -lXext -lm -fPIC
-LIB = -L libft/ -lft -lmlx -lX11 -lXext -lm 
+LIB = -L libft/ -lft -L ./ -lmlx -L /usr/lib/x86_64-linux-gnu/ -lX11 -lXext -lm 
 
 all: $(NAME)
 

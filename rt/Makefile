@@ -1,6 +1,28 @@
+# 16/03/19: 
+# 3 heures a compiler sur Ubuntu 18.04
+# a retenir :
+# 1] L'ordre d'appel des lib compte! -lmlx -lX11 -lXext et non -lX11 -lXext -lmlx
+# 2] Se rappeler que dans un Makefile a chaque nouvelle ligne on reset le repertoire courant sur le repertoire du Makefile
+# 3] outils pour trouver les librairies : 
+#	a) find ./ -name libName*
+#	b) dpkg -L libName
+#
+#
+# 22/08/20:
+#
+# https://unix.stackexchange.com:
+# libxml2 is the runtime shared library, suitable for running already-compiled programs that use that library.
+# If you want to compile# programs that use libxml2, you need to install libxml2-dev.
+# This is true for most library packages on ubuntu (and debian, mint, etc. RH and others have similar conventions).
+# libfoo is the runtime shared library, libfoo-dev contains the development headers and .a archive
+#
+# sudo apt install libxml2-dev
+# sudo apt install libpng-dev
+
+
 CC = gcc
 NAME = rt
-FLAGS = -Wall -Wextra -Werror -ggdb
+FLAGS = -Wall -Wextra -O2
 SRC = srcs/main.c\
 	srcs/parsing/parsing.c\
 	srcs/parsing/tools.c\
@@ -54,8 +76,11 @@ SRC = srcs/main.c\
 	
 OBJ = $(SRC:.c=.o)
 
-INCL = -I includes/ -I /usr/local/include -I ./ -I /usr/local/PAMP/libpng-1.6.19/include -I libmath
-LIB = -L libft/ -lft -L libmath -lmath -L /usr/local/lib -lmlx -lxml2 -framework OpenGL -framework AppKit -L /usr/local/PAMP/libpng-1.6.19/lib -lpng
+INCL = -I includes -I ./ -I ./libmath
+#LIB = -lm -L libft -lft -L libmath -lmath -lxml2  -lpng -lpthread -L ./ -lmlx -lX11 -lXext
+LIB = -L libft/ -lft -L ./ -lmlx -L /usr/lib/x86_64-linux-gnu/ -lX11 -lXext -lm -L libmath -lmath -lxml2 -lpng -lpthread
+#INCL = -I includes/ -I /usr/local/include -I ./ -I /usr/local/PAMP/libpng-1.6.19/include -I libmath
+#LIB = -L libft/ -lft -L libmath -lmath -L /usr/local/lib -lmlx -lxml2 -framework OpenGL -framework AppKit -L /usr/local/PAMP/libpng-1.6.19/lib -lpng
 
 all : $(NAME)
 
